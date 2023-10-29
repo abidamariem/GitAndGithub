@@ -1,0 +1,27 @@
+PROCEDURE SWAP(VAR xp, VAR yp: INTEGER)
+VAR
+Temp : INTEGER;
+BEGIN
+Temp:= xp;
+xp:=yp;
+yp:= Temp;
+END
+
+ALGORITHM TRI-CARDS
+VAR 
+i,j,X: INTEGER;
+tab:ARRAY_OF INTEGER[14];
+BEGIN
+    FOR j FROM 0 TO 13 DO
+        WRITE("Give the digit");
+        READ (X);
+        tab[j]:= X;
+        FOR i FROM j TO 0  DO
+            IF (tab[i] <tab [i-1]) THEN
+                SWAP(tab[i],tab[i-1]);
+            END_IF
+        END_FOR
+    END_FOR
+
+END
+
